@@ -9,5 +9,4 @@ public class CdaBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CdaBackendApplication.class, args);
 	}
-
 }

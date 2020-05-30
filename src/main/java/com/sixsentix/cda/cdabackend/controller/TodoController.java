@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class TodoController {
     @Autowired
     private TodoRepository todoRepository;
