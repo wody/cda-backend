@@ -15,7 +15,7 @@ public class TodoController {
 
     @GetMapping("/todo")
     public @ResponseBody Iterable<Todo> getAllTodos(){
-        return todoRepository.findAll();
+        return todoRepository.findAllByOrderByIdDesc();
     }
 
     @GetMapping("/todo/open")
@@ -26,7 +26,7 @@ public class TodoController {
     @PostMapping("/todo")
     public @ResponseBody Todo save(@RequestBody Todo todo) {
         if (todo.getDone() == null) todo.setDone(false);
-        if (todo.getDate_added() == null) todo.setDate_added(new Date());
+        if (todo.getDateAdded() == null) todo.setDateAdded(new Date());
         return todoRepository.save(todo);
     }
 

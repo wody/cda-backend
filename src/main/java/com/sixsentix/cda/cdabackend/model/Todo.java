@@ -1,7 +1,9 @@
 package com.sixsentix.cda.cdabackend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Date;
@@ -13,5 +15,7 @@ public class Todo {
     private Integer id;
     private String name;
     private Boolean done;
-    private Date date_added;
+    @Column("date_added")
+    @JsonProperty("date_added")
+    private Date dateAdded;
 }

@@ -13,4 +13,6 @@ public interface TodoRepository extends CrudRepository<Todo, Integer> {
     @Modifying
     @Query("UPDATE todos SET done = NOT done WHERE id = :id")
     void toggleDone(@Param("id") Integer id);
+
+    Iterable<Todo> findAllByOrderByIdDesc();
 }
