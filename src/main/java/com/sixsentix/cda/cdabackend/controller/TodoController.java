@@ -40,4 +40,9 @@ public class TodoController {
     public void removeTodo(@PathVariable Integer id) {
         todoRepository.deleteById(id);
     }
+
+    @DeleteMapping("/cleanup")
+    public void removeDoneTodos() {
+        todoRepository.deleteDoneTodos();
+    }
 }
