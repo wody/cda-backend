@@ -22,6 +22,7 @@ The provided **jar**File is a executable JAR File containing a service wrapper s
 You can directely use it to run as a service:
 
 **init.d:**
+
 Just symlink to the JAR-File:
 ```
 sudo ln -s /opt/cda/cdapp-api.jar /etc/init.d/cdapp
@@ -29,6 +30,7 @@ service cdapp start
 ```
 
 **Systemd:**
+
 Create a system service file under `/etc/systemd/system` as follows:
 ```
 [Unit]
@@ -51,6 +53,7 @@ systemctl enable cdapp.service
 ```
 
 **Securing:**
+
 Make sure you set minimal rights and make the file immutable!
 
 ```
