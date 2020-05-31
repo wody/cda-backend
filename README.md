@@ -61,3 +61,9 @@ chown cda:cda cdapp-api.jar
 chmod 500 cdapp-api.jar
 sudo chattr +i cdapp-api.jar
 ```
+
+## Database
+
+A **PostgreSQL** Database is needed.
+
+Execute all SQL Files provided in the `sql` folder on the database used in the `application.properties` settings file above!
