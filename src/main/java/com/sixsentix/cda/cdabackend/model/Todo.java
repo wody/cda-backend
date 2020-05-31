@@ -18,4 +18,5 @@ public class Todo {
     @Column("date_added")
     @JsonProperty("date_added")
     private Date dateAdded;
+    private Integer severity;
 }

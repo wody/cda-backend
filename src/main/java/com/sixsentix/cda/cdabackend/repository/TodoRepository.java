@@ -15,4 +15,8 @@ public interface TodoRepository extends CrudRepository<Todo, Integer> {
     void toggleDone(@Param("id") Integer id);
 
     Iterable<Todo> findAllByOrderByIdDesc();
+
+    @Modifying
+    @Query("DELETE FROM todos WHERE done = true")
+    void deleteDoneTodos();
 }
