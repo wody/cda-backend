@@ -7,35 +7,36 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
-@RestController
 @CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/todo")
 public class TodoController {
     @Autowired
     private TodoRepository todoRepository;
 
-    @GetMapping("/todo")
+    @GetMapping
     public @ResponseBody Iterable<Todo> getAllTodos(){
         return todoRepository.findAllByOrderByIdDesc();
     }
 
-    @GetMapping("/todo/open")
+    @GetMapping("/open")
     public @ResponseBody Integer getNrOpenTodos() {
         return todoRepository.getNrOpenTodos();
     }
 
-    @PostMapping("/todo")
+    @PostMapping
     public @ResponseBody Todo save(@RequestBody Todo todo) {
         if (todo.getDone() == null) todo.setDone(false);
         if (todo.getDateAdded() == null) todo.setDateAdded(new Date());
         return todoRepository.save(todo);
     }
 
-    @PutMapping("/todo/toggle/{id}")
+    @PutMapping("/toggle/{id}")
     public void toggleDone(@PathVariable Integer id) {
         todoRepository.toggleDone(id);
     }
 
-    @DeleteMapping("/todo/{id}")
+    @DeleteMapping("/{id}")
     public void removeTodo(@PathVariable Integer id) {
         todoRepository.deleteById(id);
     }
