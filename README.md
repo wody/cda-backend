@@ -2,10 +2,10 @@
 
 ## REST API Backend of CDA Demo App
 
-### Download Artefact
-You can find the binary artefact on the releases page. 
+### Download Artifact
+You can find the binary artifact on the releases page. 
 
-[Current Artefact Download](https://github.com/wody/cda-backend/releases/latest/download/cdapp-api.jar)
+[Current Artifact Download](https://github.com/wody/cda-backend/releases/latest/download/cdapp-api.jar)
 
 ### Configuration needed
 Provide an application.properties file with the following configuration values:
