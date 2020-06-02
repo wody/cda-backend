@@ -7,16 +7,17 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface TodoRepository extends CrudRepository<Todo, Integer> {
-    @Query("SELECT count(*) FROM todos where done = false")
-    Integer getNrOpenTodos();
 
-    @Modifying
-    @Query("UPDATE todos SET done = NOT done WHERE id = :id")
-    void toggleDone(@Param("id") Integer id);
+  @Query("SELECT count(*) FROM todos where done = false")
+  Integer getNrOpenTodos();
 
-    Iterable<Todo> findAllByOrderByIdDesc();
+  @Modifying
+  @Query("UPDATE todos SET done = NOT done WHERE id = :id")
+  void toggleDone(@Param("id") Integer id);
 
-    @Modifying
-    @Query("DELETE FROM todos WHERE done = true")
-    void deleteDoneTodos();
+  Iterable<Todo> findAllByOrderByIdDesc();
+
+  @Modifying
+  @Query("DELETE FROM todos WHERE done = true")
+  void deleteDoneTodos();
 }
